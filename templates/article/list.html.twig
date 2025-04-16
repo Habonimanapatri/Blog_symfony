@@ -1,0 +1,18 @@
+{# templates/article/list.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Articles</h1>
+    <a href="{{ path('article_new') }}">Ajouter un article</a>
+    <ul>
+        {% for article in articles %}
+            <li>
+                <h2>{{ article.title }}</h2>
+                <p>{{ article.content }}</p>
+                <p><em>Créé le {{ article.createdAt|date('Y-m-d H:i:s') }}</em></p>
+                <a href="{{ path('article_delete', {id: article.id}) }}">Supprimer</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

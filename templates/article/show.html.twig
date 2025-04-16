@@ -1,0 +1,10 @@
+{# templates/article/show.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>{{ article.title }}</h1>
+    <p>{{ article.content }}</p>
+    <p><em>Créé le {{ article.createdAt|date('Y-m-d H:i:s') }}</em></p>
+    <a href="{{ path('article_list') }}">Retour à la liste des articles</a>
+{% endblock %}

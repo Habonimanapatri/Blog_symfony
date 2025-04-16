@@ -1,0 +1,39 @@
+# config/packages/doctrine.yaml
+doctrine:
+    dbal:
+        # Configuration de la connexion à la base de données
+        url: '%env(resolve:DATABASE_URL)%'
+
+        # Configuration optionnelle pour les types de données
+        types:
+            # Exemple de type personnalisé
+            # money: App\Doctrine\Types\MoneyType
+
+    orm:
+        # Configuration de l'ORM
+        auto_generate_proxy_classes: true
+        naming_strategy: doctrine.orm.naming_strategy.default
+        auto_mapping: true
+
+        # Configuration des mappings
+        mappings:
+            App:
+                is_bundle: false
+                type: attribute
+                dir: '%kernel.project_dir%/src/Entity'
+                prefix: 'App\Entity'
+                alias: App
+
+        # Configuration des DQL (Doctrine Query Language)
+        dql:
+            string_functions:
+                # Exemple de fonction personnalisée
+                # MONTH: DoctrineExtensions\Query\Mysql\Month
+
+            numeric_functions:
+                # Exemple de fonction personnalisée
+                # RAND: DoctrineExtensions\Query\Mysql\Rand
+
+            datetime_functions:
+                # Exemple de fonction personnalisée
+                # DATE: DoctrineExtensions\Query\Mysql\Date
