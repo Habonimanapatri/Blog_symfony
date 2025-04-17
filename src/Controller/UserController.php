@@ -36,16 +36,4 @@ class UserController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
-
-    /**
-     * @Route("/users/{id}/delete", name="user_delete")
-     */
-    public function delete(User $user, EntityManagerInterface $entityManager): Response
-    {
-        $entityManager->remove($user);
-        $entityManager->flush();
-
-        return $this->redirectToRoute('article_list');
-    }
 }
-

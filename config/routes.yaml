@@ -1,5 +1,9 @@
-controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute
+# config/routes.yaml
+framework:
+    router:
+        utf8: true
+
+# Include the annotations configuration
+annotations:
+    import_from:
+        - "config/routes/annotations.yaml"
