@@ -1,9 +1,4 @@
-# config/routes.yaml
-framework:
-    router:
-        utf8: true
-
-# Include the annotations configuration
-annotations:
-    import_from:
-        - "config/routes/annotations.yaml"
+# config/routes/annotations.yaml
+controllers:
+    resource: ../src/Controller/
+    type: attribute

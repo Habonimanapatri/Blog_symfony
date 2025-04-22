@@ -10,7 +10,7 @@
             <li>
                 <h2>{{ article.title }}</h2>
                 <p>{{ article.content }}</p>
-                <p><em>Créé le {{ article.createdAt|date('Y-m-d H:i:s') }}</em></p>
+                <p><em>Créé le {{ article.createdAt | date('d') }}</em></p>
                 <a href="{{ path('article_delete', {id: article.id}) }}">Supprimer</a>
             </li>
         {% endfor %}

@@ -14,9 +14,14 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ArticleController extends AbstractController
 {
-    /**
-     * @Route("/articles", name="article_list")
-     */
+
+    #[Route('/', name: 'app_default')]
+     public function index()
+     {
+        return $this->render('article/list.html.twig', []);
+     }
+    
+    #[Route('/articles', name: 'article_list')] 
     public function list(EntityManagerInterface $entityManager): Response
     {
         $articles = $entityManager->getRepository(Article::class)->findAll();
@@ -26,9 +31,7 @@ class ArticleController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/articles/new", name="article_new")
-     */
+    #[Route('/articles/new', name: 'article_new')]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $article = new Article();
@@ -36,7 +39,6 @@ class ArticleController extends AbstractController
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $article->setCreatedAt(new \DateTime());
             $entityManager->persist($article);
             $entityManager->flush();
 
@@ -48,9 +50,7 @@ class ArticleController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/articles/{id}/delete", name="article_delete")
-     */
+    #[Route('/articles/{id}/delete', name: 'article_delete')]
     public function delete(Article $article, EntityManagerInterface $entityManager): Response
     {
         $entityManager->remove($article);
