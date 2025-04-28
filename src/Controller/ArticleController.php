@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ArticleController extends AbstractController
 {
 
-    #[Route('/', name: 'app_default')]
+    #[Route('/', name: 'article_edit')]
      public function index()
      {
         return $this->render('article/list.html.twig', []);

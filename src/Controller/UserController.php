@@ -14,7 +14,10 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class UserController extends AbstractController
-{
+{   
+     /**
+     * @Route("/users", name="user_list", methods={"GET"})
+     */
     #[Route('/users', name: 'user_list')]
     public function list(EntityManagerInterface $entityManager): Response
     {

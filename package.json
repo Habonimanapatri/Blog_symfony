@@ -1,0 +1,36 @@
+npm{
+  "name": "blog_symfo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Habonimanapatri/Blog_symfony.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Habonimanapatri/Blog_symfony/issues"
+  },
+  "homepage": "https://github.com/Habonimanapatri/Blog_symfony#readme",
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "jquery": "^3.7.1"
+  },
+  "devDependencies": {
+    "@hotwired/stimulus": "^3.0.0",
+    "@hotwired/turbo": "^7.1.1 || ^8.0",
+    "@symfony/stimulus-bridge": "^3.2.0 || ^4.0.0",
+    "@symfony/ux-react": "file:vendor/symfony/ux-react/assets",
+    "@symfony/ux-turbo": "file:vendor/symfony/ux-turbo/assets",
+    "@symfony/webpack-encore": "^5.1.0",
+    "bootstrap": "^5.3.5",
+    "react": "^18.0",
+    "react-dom": "^18.0"
+  }
+}
